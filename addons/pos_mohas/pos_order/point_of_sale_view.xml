@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="return_view_pos_tree" model="ir.ui.view" >
+            <field name="name">ret.pos.order.tree</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="pos_reference" position="after">
+                   <field name="back_order"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="return_view_pos_form" model="ir.ui.view" >
+            <field name="name">ret.pos.order.form</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <field name="pos_reference" position="after">
+                   <field name="back_order"/>
+                </field>
+                <xpath expr="//field[@name='lines']/tree[@string='Order lines']/field[@name='product_id']" position="after">
+                    <field name="back_order"/>
+                    <field name="prodlot_id"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="acespritech_view_account_journal_form" model="ir.ui.view">
+            <field name="name">acespritech.account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="centralisation" position="before">
+                    <field name="shortcut_key"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ace_view_pos_config_form">
+            <field name="name">pos.config.form.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <field name="iface_big_scrollbars" position="after">
+                    <field name="enable_pos_serial"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

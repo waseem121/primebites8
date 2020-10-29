@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_purchase_global_fix_discount_purchase_global_fix_discount,purchase_global_fix_discount.purchase_global_fix_discount,model_purchase_global_fix_discount_purchase_global_fix_discount,,1,0,0,0

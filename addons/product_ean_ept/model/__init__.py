@@ -1,0 +1,4 @@
+import product_product
+import product_ean13
+import res_company
+import product_template

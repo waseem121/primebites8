@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_picking_form_stock_quant_fix_inherit1" model="ir.ui.view">
+            <field name="name">stock.picking.form.stock.quant.fix.inherit1</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+                <button name="force_assign" position="replace">
+                    <button name="force_assign" states="confirmed,waiting,partially_available" string="Force Availability" 
+                            type="object" groups="stock_quant_fix.group_force_availability"/>
+                </button>
+            </field>
+        </record>
+
+    </data>
+</openerp>    

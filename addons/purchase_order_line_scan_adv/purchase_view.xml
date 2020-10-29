@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record id="purchase_order_form_pol_scan_inherit1" model="ir.ui.view">
+            <field name="name">purchase.order.form.pol.scan.inherit1</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form" />
+            <field name="arch" type="xml">
+                <field name="order_line" position="before">
+                    <group>
+                        <field name="state" invisible="1" />
+                        <button name="%(action_purchase_order_line_scan)d" type="action" string="Scan Products" colspan="2" attrs="{'invisible': [('state','!=', 'draft')]}" />
+                    </group>
+                </field>
+            </field>
+        </record>
+        
+    </data>
+</openerp>    

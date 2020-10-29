@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+    <data>
+        <template id="index" inherit_id='point_of_sale.index' name="Custom Index">
+            <xpath expr="//link[@id='pos-stylesheet']" position="after">
+                <link rel="stylesheet" href="/pos_weight_cust/static/css/pos_custom.css" id="pos-custom-weight"/>
+            </xpath>
+        </template>
+        
+    
+        <template id="assets_backend4" name="pos_new assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_weight_cust/static/src/js/pos_weight_cust.js"></script>
+            </xpath>
+        </template>
+	    
+    </data>
+</openerp>

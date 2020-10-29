@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    
+    <t t-extend="PaymentScreenWidget">
+        <t t-jquery="div.payment-info" t-operation="replace">
+            <div class='payment-info'>
+                <div class="infoline">
+                    <span class='left-block'>
+                        Paid:
+                    </span>
+                    <span class="right-block payment-paid-total"></span>
+                </div>
+                <div class="infoline">
+                    <span class='left-block'>
+                        Remaining:
+                    </span>
+                    <span class="right-block payment-remaining"></span>
+                </div>
+<!--                <div class="infoline">
+                    <span class='left-block'>
+                        Fixed Discount:
+                    </span>
+                    <span class="right-block payment-fixed-discount"></span>
+                </div>-->
+                <div class="infoline bigger" >
+                    <span class='left-block'>
+                        Change:
+                    </span>
+                    <span class="right-block payment-change"></span>
+                </div>
+            </div>
+        </t>
+    </t>
+    
+    <t t-name="discount-on-order-view">
+        <table>
+            <tr>
+                <td style="padding-left: 10px;padding-bottom:30px;">Enter Discount</td>
+                <td style="padding-left: 10px;padding-bottom:30px;">
+                    <input type="text" name="discount_on_order" id="discount_on_order" value="" style="width: 200px;height:30px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 10px;padding-bottom:30px;">Enter Password</td>
+                <td style="padding-left: 10px;padding-bottom:30px;">
+                    <input type="password" name="discount_password" id="discount_password" value="" style="width: 200px;height:30px;"/>
+                    
+                </td>
+              
+            </tr>
+        </table>
+    </t>
+    
+     <t t-name="discount-on-fixed-order-view">
+        <table>
+            <tr>
+                <td style="padding-left: 10px;padding-bottom:30px;">Enter Discount</td>
+                <td style="padding-left: 10px;padding-bottom:30px;">
+                    <input type="text" name="fixed_discount_on_order" id="fixed_discount_on_order" value="" style="width: 200px;height:30px;"/>
+                </td>
+            </tr>
+        </table>
+    </t>
+    
+</templates>

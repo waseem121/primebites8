@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="view_pos_config_form_pos_cust_inherit1">
+            <field name="name">pos.config.form.view.pos.cust.inherit1</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button[@name='set_deprecate']" position="after">
+                    <button string="Process Missing Order" name="process_missing_order" type="object" states="active,inactive" />
+                </xpath>
+            </field>
+        </record>
+        
+        <!--adding manager groups to view-->
+        <record model="ir.ui.view" id="view_pos_session_form_pos_cust_inherit1">
+            <field name="name">view.pos.session.form.pos.cust.inherit1</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//separator[@string='Summary by Payment Methods']" position="replace">
+                    <separator string="Summary by Payment Methods" attrs="{'invisible' : [('state', '=', 'opening_control')]}" groups="point_of_sale_cust.group_pos_payment_summary_manager"/>
+                </xpath>
+                <xpath expr="//field[@name='statement_ids']" position="replace">
+                    <field name="statement_ids" attrs="{'invisible' : [('state', '=', 'opening_control')]}" groups="point_of_sale_cust.group_pos_payment_summary_manager">
+                        <tree string="Statements">
+                            <field name="name" />
+                            <field name="journal_id" />
+                            <field name="balance_start" />
+                            <field name="total_entry_encoding" />
+                            <field name="balance_end_real" />
+                            <field name="difference" />
+                            <field name="currency" groups="base.group_multi_currency" />
+                            <field name="state" />
+                        </tree>
+                    </field>
+                </xpath>
+                
+                <xpath expr="/form/sheet/div" position="inside">
+                    <button class="oe_stat_button" name="open_order_analysis_report"
+                        type="object" icon="fa-level-down">
+                        <div>Order Analysis</div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    
+    </data>
+</openerp>

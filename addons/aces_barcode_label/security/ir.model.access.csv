@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_product_aces_label,access.product.product.aces.label,product.model_product_product,base.group_user,1,1,1,0
+access_report_paperformat_aces_label,access.report.paperformat.aces.label,report.model_report_paperformat,base.group_user,1,1,1,0
+access_res_currency_aces_label,access.res.currency.aces.label,base.model_res_currency,base.group_user,1,1,1,0

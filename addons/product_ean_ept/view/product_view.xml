@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	
+		<record id="view_pee_product_product_tree_view_multi_ean13" model="ir.ui.view">
+            <field name="name">product.product.tree.multi.ean13</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view" />
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<field name="barcode" position="replace">
+                	<field name="main_ean13" />
+                </field>
+            </field>
+        </record>
+	
+		<record id="view_pee_product_normal_form_view_multi_ean13"
+			model="ir.ui.view">
+			<field name="name">product.normal.form.multi.ean13</field>
+			<field name="model">product.product</field>
+			<field name="inherit_id" ref="product.product_normal_form_view" />
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+			
+				  <field name="barcode" position="replace">
+                	<field name="main_ean13" />
+                </field>
+				<xpath expr="/form//page[@name='sales']/div" position="after">
+					<separator string="EAN code" />
+					<button name="auto_generate_ean13" type="object" string="Generate EAN Code"></button>
+					<field name="ean13_ids" nolabel="1">
+						<tree string="EAN Items" editable="bottom">
+							<field name="sequence" />
+							<field name="name" />
+							<field name="type" />
+							<field name="supplier_id" />
+							<field name="by_supplier" string="Supplier BarCode" />
+						</tree>
+					
+					</field>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

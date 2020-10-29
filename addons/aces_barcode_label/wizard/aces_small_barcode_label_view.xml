@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_aces_small_barcode_label_form">
+            <field name="name">aces.small.barcode.label.form</field>
+            <field name="model">aces.small.barcode.label</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="paper_format_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <group string="Label">
+                            <field name="height"/>
+                            <field name="width"/>
+                        </group>
+                        <group string="Currency">
+                            <field name="currency_id"/>
+                            <field name="currency_position"/>
+                        </group>
+                    </group>
+                    <group string="Barcode">
+                        <field name="barcode_type" style="width:30%"/>
+                        <field name="disp_height"/>
+                        <field name="disp_width"/>
+                    </group>
+                    <notebook>
+                        <page string="Products">
+                            <field name="product_lines">
+                                <tree string="Product Lines" editable="top">
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Fields">
+                            <field name="field_lines">
+                                <tree string="Lines" editable="top">
+                                    <field name="font_size"/>
+                                    <field name="font_color"/>
+                                    <field name="text_margin_top"/>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button name="action_call_report" string="Print" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_aces_small_barcode_label"
+            name="Dynamic Product Label"
+            src_model="product.product"
+            res_model="aces.small.barcode.label"
+            view_type="form"
+            view_mode="form"
+            key2="client_print_multi"
+            target="new"/>
+
+    </data>
+</openerp>

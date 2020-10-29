@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <template id="product_barcode_report_template">
+            <span t-foreach="get_label_data(data['form'])" t-as="l">
+                <div class="page" style="valign:center">
+                    <div style="text-align: center;">
+                        <span t-if="l.get(1)">
+                            <t t-set="style" t-value="draw_style(data['form'],l[1])"/>
+                            <div t-att-style="style" t-raw="l[1]"/>
+                        </span>
+                        <span t-if="l.get(2)">
+                            <t t-set="style" t-value="draw_style(data['form'],l[2])"/>
+                            <div t-att-style="style" t-raw="l[2]" style=""/>
+                        </span>
+                        <span t-if="l.get(3)">
+                            <t t-set="style" t-value="draw_style(data['form'],l[3])"/>
+                            <div t-att-style="style" t-raw="l[3]"/>
+                        </span>
+                        <span t-if="l.get(4)">
+                            <t t-set="style" t-value="draw_style(data['form'],l[4])"/>
+                            <div t-att-style="style" t-raw="l[4]"/>
+                        </span>
+                        <span t-if="l.get(5)">
+                            <t t-set="style" t-value="draw_style(data['form'],l[5])"/>
+                            <div t-att-style="style" t-raw="l[5]"/>
+                        </span>
+                    </div>
+                </div>
+            </span>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+    
+        <record model="ir.ui.view" id="view_pos_custom_config_form">
+            <field name="name">pos.config.custom.form.view</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Features']" position="before">
+                    <group colspan="4">
+                        <separator string="Discount Configuration" colspan="4"/>
+                        <field name="discount"/>
+                        <field name="password_discount" password="True"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

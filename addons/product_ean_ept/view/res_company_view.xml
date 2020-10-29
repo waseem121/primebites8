@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record id="company_view_inherit_config" model="ir.ui.view">
+			<field name="name">Company Form view</field>
+			<field name="model">res.company</field>
+			<field name="inherit_id" ref="base.view_company_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='account_grp']" position="after">
+					<group name="barcode" string="Barcode">
+						<field name="barcode_at_product_create" />
+					</group>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

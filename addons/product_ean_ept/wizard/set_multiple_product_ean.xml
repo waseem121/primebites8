@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_pee_generate_selective_products_ean" model="ir.ui.view">
+			<field name="name">Generate EAN For Multiple Products</field>
+			<field name="model">generate.ean.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Generate EAN">
+					<footer>
+						<button name="generate_eans" string="Generate EAN Code"
+							type="object" class="oe_highlight" />
+						<button name="generate_eans" string="Generate EAN and View Products"
+							type="object" class="oe_highlight" invisible="not context.get('action') == 'category'" context="{'open_products':True}"/>
+						<button string="Cancel" class="oe_highlight" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<act_window 
+			name="Generate EAN" 
+			res_model="generate.ean.wizard"
+			src_model="product.product" 
+			view_mode="form" 
+			view_type="form"
+			target="new" 
+			multi="True" 
+			key2="client_action_multi"
+			id="action_pee_generate_selective_products_ean_from_product"
+			view_id="view_pee_generate_selective_products_ean"
+			context="{'action':'product'}"			
+		/>
+		<act_window 
+			name="Generate EAN" 
+			res_model="generate.ean.wizard"
+			src_model="product.category" 
+			view_mode="form" 
+			view_type="form"
+			target="new" 
+			multi="True" 
+			key2="client_action_multi"
+			id="action_pee_generate_selective_products_ean_from_category"
+			view_id="view_pee_generate_selective_products_ean"
+			context="{'action':'category'}"			
+		/>		
+	</data>
+</openerp>        

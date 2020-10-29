@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- vim:fdn=3:
+-->
+<openerp>
+        <data>
+
+        <menuitem  parent="point_of_sale.menu_point_of_sale"
+                   id="point_of_sale.menu_point_ofsale" action="point_of_sale.action_pos_pos_form"
+                  sequence="2"
+                  groups="point_of_sale.group_pos_manager,pos_menu_hiding.group_pos_order_view"/>
+        <act_window
+            id="point_of_sale.act_pos_session_orders"
+            name="Orders"
+            src_model="pos.session"
+            res_model="pos.order"
+            groups="point_of_sale.group_pos_manager,pos_menu_hiding.group_pos_order_view"
+            context="{'search_default_session_id': active_id, 'default_session_id' : active_id }" />
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_session_no_constraint_pos_session_no_constraint,pos_session_no_constraint.pos_session_no_constraint,model_pos_session_no_constraint_pos_session_no_constraint,,1,0,0,0

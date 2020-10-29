@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="view_report_pos_order_graph_pos_cust_inherit1">
+            <field name="name">view.report.pos.order.graph.pos.cust.inherit1</field>
+            <field name="model">report.pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_report_pos_order_graph" />
+            <field name="arch" type="xml">
+                
+                <field name="date" position="after">
+                    <field name="pos_session_id" type="row"/>
+                </field>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_report_pos_order_search_pos_cust_inherit1">
+            <field name="name">view.report.pos.order.search.pos.cust.inherit1</field>
+            <field name="model">report.pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search" />
+            <field name="arch" type="xml">
+                <filter string="Product" position="after">
+                    <filter string="POS Session" context="{'group_by':'pos_session_id'}"/>
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>

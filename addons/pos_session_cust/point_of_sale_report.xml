@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<openerp>
+    <data>
+        
+        <report
+            id="action_report_pos_session_order_summary"
+            string="Session Sales Report"
+            model="pos.session"
+            report_type="qweb-pdf"
+            name="pos_session_cust.report_sessionordersummary"
+            file="pos_session_cust.report_sessionordersummary"
+         />
+    </data>
+</openerp>

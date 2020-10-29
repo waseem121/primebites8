@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_company_form_inherit" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <page string="Report Configuration" position="after">
+                    <page string="Label Report Configuration">
+                        <group>
+                            <group string="Label">
+                                <field name="label_height"/>
+                                <field name="label_width"/>
+                            </group>
+                            <group string="Currency">
+                                <field name="label_currency_id"/>
+                                <field name="label_currency_position"/>
+                            </group>
+                        </group>
+                        <group string="Barcode">
+                            <field name="label_barcode_type" style="width:30%"/>
+                            <field name="label_disp_height"/>
+                            <field name="label_disp_width"/>
+                        </group>
+                        <group string="Field Lines">
+                            <field name="label_field_lines" nolabel="1">
+                                <tree string="Lines" editable="top">
+                                    <field name="font_size"/>
+                                    <field name="font_color"/>
+                                    <field name="text_margin_top"/>
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</openerp>

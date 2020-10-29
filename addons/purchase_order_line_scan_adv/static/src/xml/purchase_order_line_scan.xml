@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    
+    <t t-name="order_line_scan">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Scan Order Line</h4>
+                </div>
+                <div class="modal-body">
+<!--                    <table>
+                        <tr>
+                            <td><input class="barcode_field" type="text" placeholder="Barcode" /></td>
+                        </tr>
+                        <tr>
+                            <td><input class="quantity_field" type="text" placeholder="Quantity" /></td>
+                        </tr>
+                        <tr>
+                            <td><button class="scan_button oe_highlight">OK</button></td>
+                        </tr>
+                    </table>-->
+                    <p>
+                        <input class="barcode_field" type="text" placeholder="Barcode" />
+                    </p>
+                    <p>
+                        <input class="quantity_field" type="text" placeholder="Quantity" />
+                    </p>
+                    <p>
+                        <button class="scan_button oe_highlight">OK</button>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Quit</button>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>
